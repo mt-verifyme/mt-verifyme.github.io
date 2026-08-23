@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help a Friend – Social Recovery</title>
+    <meta name="description" content="We help you recover your social media accounts. Friendly, safe, and reliable.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            color: #1c1e21;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: #1877f2;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .nav-links .btn-small {
+            background: white;
+            color: #1877f2;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .nav-links .btn-small:hover {
+            background: #f0f2f5;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1877f2, #42b72a);
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
+            background-size: 40px 40px;
+            animation: moveBg 20s linear infinite;
+            opacity: 0.3;
+        }
+        @keyframes moveBg {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(40px,40px); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .btn-hero {
+            display: inline-block;
+            background: white;
+            color: #1877f2;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px 40px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        /* Photo Section */
+        .photo-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .photo-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1877f2;
+        }
+        .photo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .photo-caption {
+            margin-top: 15px;
+            color: #606770;
+            font-size: 14px;
+        }
+        /* About section */
+        .about {
+            background: white;
+            padding: 60px 0;
+        }
+        .about .container {
+            max-width: 800px;
+        }
+        .about h2 {
+            font-size: 32px;
+            color: #1877f2;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .about p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .about .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .team-member {
+            text-align: center;
+            width: 150px;
+        }
+        .team-member .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #1877f2;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .team-member .name {
+            font-weight: bold;
+        }
+        .team-member .role {
+            color: #606770;
+            font-size: 14px;
+        }
+        /* Footer */
+        footer {
+            background: #1877f2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .btn-hero { font-size: 18px; padding: 12px 30px; }
+            .nav { flex-direction: column; gap: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="logo">Social Recovery</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="help/index.html" class="btn-small">Help a friend verify</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>We help you get back to the moments that matter</h1>
+            <p>Lost access to your social media account? Our friendly team guides you through a safe recovery process so you can reconnect with friends and family.</p>
+            <a href="help/index.html" class="btn-hero">Help a friend verify</a>
+        </div>
+    </section>
+
+    <section class="photo-section">
+        <div class="container">
+            <h2>Happy Moments with Friends & Family</h2>
+            <div class="photo-container">
+                <!-- Replace the src below with your own image URL or local file path -->
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&auto=format&fit=crop" alt="Happy friends and family">
+            </div>
+            <p class="photo-caption">Reconnect with the people you love.</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Our Service</h2>
+            <p>We specialize in helping individuals regain access to their social media accounts. Whether you've been locked out, forgotten your password, or your account was compromised, our guided recovery process is designed to be simple, secure, and effective.</p>
+            <p>Our team works alongside you to verify your identity and restore your connection to the people and memories you care about. We understand how important your online presence is, and we treat every recovery with the utmost care and confidentiality.</p>
+            <p>With years of experience and a passion for helping others, we've assisted thousands of users in getting back to sharing happy moments with friends and family.</p>
+            <div class="team">
+                <div class="team-member">
+                    <div class="avatar">J</div>
+                    <div class="name">Jordan</div>
+                    <div class="role">Founder & Recovery Specialist</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">A</div>
+                    <div class="name">Alex</div>
+                    <div class="role">Support Lead</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">M</div>
+                    <div class="name">Morgan</div>
+                    <div class="role">Security Advisor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Social Recovery. All rights reserved. | <a href="#about">About</a></p>
+    </footer>
+</body>
+</html>
